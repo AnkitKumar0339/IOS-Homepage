@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navbar Example</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#" style="color: #434343; font-size: 20px; padding-left: 20px;">
+      Review proposal <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1f1f1f"><path d="m576-288-51-51 105-105H192v-72h438L525-621l51-51 192 192-192 192Z"/></svg>
+    </a>
+
+    <div class="icon-wrapper">
+      <button class="icon-button" id="toggleIcon">
+        <img src="more-circle.png" alt="More options">
+      </button>
+      <div class="toggle-button" id="rejectBtn">Reject project</div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+      <h2>Reject project?</h2>
+      <p>Rejecting the project will disable further negotiations. This can’t be undone.</p>
+      <div class="modal-buttons">
+        <button class="btn-cancel" id="cancelBtn">Cancel</button>
+        <button class="btn-reject">Reject project</button>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="main-content-wrapper" style="height: 839px;"> 
+    <div class="main-container">
+      <div class="proposal-header">
+        <p class="text-label">Proposal</p>
+        <h1 class="main-title">iOS Design Project</h1>
+        <p class="sub-title">Created by Jay Arjun &bull; For John Archer</p>
+      </div>
+
+      <div class="action-buttons-section">
+        <div style="margin-right: 5px; padding-top: 80px;">
+          <button type="button" class="btn btn-light rounded-pill border d-inline-flex align-items-center justify-content-center px-4 py-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left me-2" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+            Back
+          </button>
+        </div>
+
+        <div class="right-buttons-group">
+          <button id="commentToggle" class="btn btn-light d-lg-none">+ Comment</button> 
+          <button type="button" class="btn btn-success" style="border-radius: 30px; margin-top: 80px;">
+            Approve project
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section id="commentPanel" aria-label="comments panel">
+      <div class="comment-header">Comments</div>
+
+      <ul class="comment-list" id="commentList">
+        <li class="comment-item">
+          <img src="https://i.pravatar.cc/64?img=1" alt="">
+          <div class="comment-body">
+          <p class="comment-text">Is this done?</p>
+          <span class="comment-meta">Yesterday • 04:40 PM</span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <img src="https://i.pravatar.cc/64?img=1" alt="">
+          <div class="comment-body">
+          <p class="comment-text">Done! A long time ago 🙌</p>
+          <span class="comment-meta">Yesterday • 04:40 PM</span>
+          </div>
+        </li>
+        <li class="comment-item">
+          <img src="https://i.pravatar.cc/64?img=11" alt="">
+          <div class="comment-body">
+          <p class="comment-text">Let’s get this going.</p>
+          <span class="comment-meta">Yesterday • 04:40 PM</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="comment-input">
+        <input id="commentInput" type="text" placeholder="Write here">
+        <button class="send-btn" id="sendBtn" aria-label="send comment">
+          <svg viewBox="0 0 24 24"><path d="M22 2 11 13" /><path d="m22 2-7 20-4-9-9-4Z" /></svg>
+        </button>
+      </div>
+    </section>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
